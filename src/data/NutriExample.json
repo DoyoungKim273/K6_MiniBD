@@ -1,0 +1,220 @@
+{
+  "num": "1",
+  "title": "하루 종일 국밥 먹은 날",
+  "age": "19~29",
+  "condition1": "preg1",
+  "condition2": "12",
+  "timeStamp": "2024-06-20 01:00:00",
+  "selectedItems": [
+    "국밥_돼지머리",
+    "국밥_순대국밥",
+    "국밥_콩나물",
+    "국밥_돼지고기",
+    "국밥_소고기",
+    "깍두기",
+    "갓김치",
+    "가지나물",
+    "고구마줄기나물",
+    "갈치젓_양념"
+  ],
+  "nutriTotal": [
+    {
+      "name": "energy",
+      "total": 1112,
+      "required": "2000",
+      "percentage": "55.6"
+    },
+    {
+      "name": "carbohydrate",
+      "total": 129.01,
+      "required": "175",
+      "percentage": "73.7"
+    },
+    {
+      "name": "dietaryFiber",
+      "total": 28.3,
+      "required": "25",
+      "percentage": "113.2"
+    },
+    {
+      "name": "fat",
+      "total": 39.16,
+      "required": "45",
+      "percentage": "87.0"
+    },
+    {
+      "name": "linoleic",
+      "total": 8.55,
+      "required": "10",
+      "percentage": "85.5"
+    },
+    {
+      "name": "protein",
+      "total": 62.67,
+      "required": "55",
+      "percentage": "113.9"
+    },
+    {
+      "name": "methionine",
+      "total": 0.69,
+      "required": "1.4",
+      "percentage": "49.3"
+    },
+    {
+      "name": "leucine",
+      "total": 3.78,
+      "required": "3.1",
+      "percentage": "121.9"
+    },
+    {
+      "name": "isoleucine",
+      "total": 1.81,
+      "required": "1.4",
+      "percentage": "129.3"
+    },
+    {
+      "name": "valine",
+      "total": 2.28,
+      "required": "1.7",
+      "percentage": "134.1"
+    },
+    {
+      "name": "lysine",
+      "total": 3.45,
+      "required": "2.9",
+      "percentage": "119.0"
+    },
+    {
+      "name": "threonine",
+      "total": 2.02,
+      "required": "3.8",
+      "percentage": "53.2"
+    },
+    {
+      "name": "histidine",
+      "total": 1.03,
+      "required": "1.5",
+      "percentage": "68.7"
+    },
+    {
+      "name": "water",
+      "total": 1240.2,
+      "required": "2300",
+      "percentage": "53.9"
+    },
+    {
+      "name": "vitA",
+      "total": 650,
+      "required": "720",
+      "percentage": "90.3"
+    },
+    {
+      "name": "vitD",
+      "total": 0,
+      "required": "10",
+      "percentage": "0.0"
+    },
+    {
+      "name": "vitC",
+      "total": 6.17,
+      "required": "110",
+      "percentage": "5.6"
+    },
+    {
+      "name": "thiamine",
+      "total": 8.26,
+      "required": "1.5",
+      "percentage": "550.7"
+    },
+    {
+      "name": "riboflavin",
+      "total": 1.01,
+      "required": "1.6",
+      "percentage": "63.1"
+    },
+    {
+      "name": "niacin",
+      "total": 3.54,
+      "required": "18",
+      "percentage": "19.7"
+    },
+    {
+      "name": "folate",
+      "total": 164.7,
+      "required": "620",
+      "percentage": "26.6"
+    },
+    {
+      "name": "vitB12",
+      "total": 3.29,
+      "required": "2.6",
+      "percentage": "126.5"
+    },
+    {
+      "name": "p",
+      "total": 711,
+      "required": "700",
+      "percentage": "101.6"
+    },
+    {
+      "name": "ala",
+      "total": 0.66,
+      "required": "1.2",
+      "percentage": "55.0"
+    },
+    {
+      "name": "mg",
+      "total": 324.55,
+      "required": "320",
+      "percentage": "101.4"
+    },
+    {
+      "name": "cu",
+      "total": 880,
+      "required": "780",
+      "percentage": "112.8"
+    },
+    {
+      "name": "na",
+      "total": 8654,
+      "required": "1500",
+      "percentage": "576.9"
+    },
+    {
+      "name": "k",
+      "total": 2277,
+      "required": "3500",
+      "percentage": "65.1"
+    },
+    {
+      "name": "fe",
+      "total": 5.25,
+      "required": "24",
+      "percentage": "21.9"
+    },
+    {
+      "name": "mn",
+      "total": 1.82,
+      "required": "3.5",
+      "percentage": "52.0"
+    },
+    {
+      "name": "zn",
+      "total": 7.08,
+      "required": "10.5",
+      "percentage": "67.4"
+    },
+    {
+      "name": "ca",
+      "total": 634,
+      "required": "700",
+      "percentage": "90.6"
+    },
+    {
+      "name": "se",
+      "total": 92.76,
+      "required": "64",
+      "percentage": "144.9"
+    }
+  ]
+}

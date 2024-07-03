@@ -1,0 +1,148 @@
+import React, { useEffect } from "react";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { isLoggedInState } from "../state/UserState";
+import { userIdState } from "../state/UserState";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { BsXLg } from "react-icons/bs";
+
+export default function Login() {
+  const [isLoggedIn, setIsLoggedin] = useRecoilState(isLoggedInState);
+  const [userId, setUserId] = useRecoilState(userIdState);
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleUserIdChange = (event) => {
+    setUserId(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+
+    const dataToGo = { userId, password };
+    console.log("백으로 넘어가는 데이터", dataToGo);
+
+    try {
+      const response = await fetch(
+        `http://${process.env.REACT_APP_APIKEY}/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ userId, password }),
+        }
+      );
+
+      // const data = await response.json();
+      // console.log("서버 응답 데이터", data);
+      if (response.ok) {
+        // const data = await response.json();
+        // localStorage.setItem("Authorization", Authorization);
+        setIsLoggedin(true);
+        if (setUserId) {
+          setUserId(userId);
+        } else {
+          console.error("setUserId 가 undefined 입니다.");
+        }
+        localStorage.setItem("userId", userId);
+        console.log("로그인 성공", userId);
+        // console.log("Authorization", data)
+        // setUserId("");
+        // setPassword("");
+        alert("로그인에 성공하였습니다.");
+        navigate(`/`);
+      } else {
+        console.log("로그인 실패");
+        alert(
+          "로그인에 실패하였습니다. 아이디와 비밀번호를 모두 입력해주세요."
+        );
+      }
+    } catch (error) {
+      console.log("네트워크 오류", error.message);
+      alert("네트워크 오류로 로그인에 실패하였습니다.");
+    }
+  };
+
+  return (
+    <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-purple-950">
+          🤱🏻 로그인 페이지 🤱🏻
+        </h2>
+      </div>
+
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form className="space-y-6" action="#" method="POST">
+          <div>
+            <label for="id" className="block font-bold leading-6 text-gray-900">
+              이메일
+            </label>
+            <div className="mt-2">
+              <div className="text-xs m-2 text-end  hover:text-amber-600">
+                <Link to="/SearchId">가입하신 이메일을 잊으셨나요?</Link>
+              </div>
+              <input
+                id="id"
+                name="id"
+                type="id"
+                value={userId}
+                required
+                onChange={handleUserIdChange}
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900  ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 "
+              ></input>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-center justify-between">
+              <label
+                for="password"
+                className="block font-bold leading-6 text-gray-900"
+              >
+                비밀번호
+              </label>
+            </div>
+            <div className="mt-2">
+              <div className="text-xs m-2 text-end hover:text-amber-600">
+                <Link to="/SearchPass">가입하신 비밀번호를 잊으셨나요?</Link>
+              </div>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                value={password}
+                required
+                onChange={handlePasswordChange}
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900  ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 "
+              ></input>
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              className="flex w-full justify-center rounded-xl bg-amber-100 px-3 py-1.5 text-sm font-semibold leading-6 text-slate-800 shadow-sm hover:bg-amber-500"
+              onClick={handleLogin}
+            >
+              로그인
+            </button>
+          </div>
+        </form>
+
+        <p className="mt-10 text-center text-sm text-gray-500">
+          <Link
+            to="/BeMember"
+            className="font-semibold leading-6 text-purple-950 hover:text-amber-700"
+          >
+            회원가입 바로가기
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+}
